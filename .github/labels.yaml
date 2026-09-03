@@ -1,0 +1,81 @@
+# Core Labels
+- name: "bug"
+  description: "Something is not working"
+  color: "d73a4a"
+
+- name: "feature"
+  description: "New feature or request"
+  color: "a2eeef"
+
+- name: "enhancement"
+  description: "Improvement to existing functionality"
+  color: "0e8a16"
+
+- name: "docs"
+  description: "Documentation updates"
+  color: "0075ca"
+
+- name: "breaking-change"
+  description: "Breaking changes"
+  color: "b60205"
+
+- name: "core"
+  description: "Core & Architecture changes"
+  color: "006b75"
+
+- name: "models"
+  description: "Data models and result rendering"
+  color: "1d76db"
+
+- name: "config"
+  description: "Config component: octodns config access and validation"
+  color: "fbca04"
+
+- name: "dns"
+  description: "DNS component: plan and deploy"
+  color: "5319e7"
+
+- name: "records"
+  description: "Records component: zone file editing"
+  color: "bfdadc"
+
+- name: "security"
+  description: "Security-related changes"
+  color: "ee0701"
+
+- name: "refactor"
+  description: "Code refactoring"
+  color: "cccccc"
+
+- name: "cli"
+  description: "CLI & Commands"
+  color: "f9d0c4"
+
+- name: "tests"
+  description: "Testing"
+  color: "e99695"
+
+- name: "ci-cd"
+  description: "CI/CD and automation"
+  color: "0052cc"
+
+- name: "dependencies"
+  description: "Changes to dependencies"
+  color: "a569bd"
+
+- name: "automated"
+  description: "Automated changes (bots, scheduled workflows)"
+  color: "ededed"
+
+# PR Labels
+- name: "duplicate"
+  description: "This issue or PR already exists"
+  color: "cfd3d7"
+
+- name: "invalid"
+  description: "This doesn't seem right"
+  color: "e4e669"
+
+- name: "wontfix"
+  description: "This will not be worked on"
+  color: "ffffff"
