@@ -28,7 +28,15 @@ dependencies = [
 scripts.manticora = "manticora.__main__:main"
 
 [dependency-groups]
-dev = [ "deptry", "import-linter", "poethepoet", "prek", "ruff", "ty" ]
+dev = [
+  { include-group = "tests" },
+  "deptry",
+  "import-linter",
+  "poethepoet",
+  "prek",
+  "ruff",
+  "ty",
+]
 tests = [ "click", "pytest", "pytest-cov", "pytest-randomly", "pytest-sugar" ]
 
 [tool.hatch]
@@ -39,7 +47,20 @@ build.targets.sdist.include = [ "manticora/**/*.py" ]
 
 [tool.ruff]
 line-length = 120
-lint.select = [ "D", "E", "EXE", "F", "G010", "I", "N", "PGH", "S", "UP", "W", "YTT" ]
+lint.select = [
+  "D",
+  "E",
+  "EXE",
+  "F",
+  "G010",
+  "I",
+  "N",
+  "PGH",
+  "S",
+  "UP",
+  "W",
+  "YTT",
+]
 lint.ignore = [
   "D1",   # don't enforce missing docstrings
   "D202", # allow blank line after function docstring
@@ -82,9 +103,7 @@ layers = [
 [[tool.importlinter.contracts]]
 name = "components only meet through the application registry"
 type = "independence"
-modules = [
-  "manticora.components.*",
-]
+modules = [ "manticora.components.*" ]
 
 [tool.poe]
 tasks.format = "uv run ruff format ."
