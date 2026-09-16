@@ -106,13 +106,13 @@ type = "independence"
 modules = [ "manticora.components.*" ]
 
 [tool.poe]
-tasks.format = "uv run ruff format ."
-tasks.check-format = "uv run ruff format --check ."
-tasks.lint = "uv run ruff check ."
-tasks.typecheck = "uv run --group dev --group tests ty check"
-tasks.lint-imports = "uv run --group dev lint-imports"
-tasks.deptry = "uv run --group dev deptry ."
-tasks.lint-md = "uv run --group dev prek run markdownlint-cli2 --all-files"
-tasks.check = [ "check-format", "lint", "lint-md", "typecheck", "lint-imports", "deptry" ]
-tasks.tests = "uv run --group tests pytest"
-tasks.coverage = "uv run --group tests pytest --cov=manticora --cov-report=term --cov-report=html"
+executor.type = "uv"
+tasks.format = "ruff format --check ."
+tasks."format:fix" = "ruff format ."
+tasks.lint = "ruff check ."
+tasks."lint:fix" = "ruff check --fix ."
+tasks.typecheck = "ty check"
+tasks.lint-imports = "lint-imports --no-logo"
+tasks.deptry = "deptry ."
+tasks.check = [ "format", "lint", "typecheck", "lint-imports", "deptry" ]
+tasks.tests = "pytest"
