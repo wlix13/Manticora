@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections.abc import Sequence
 from typing import ClassVar, Generic
 
 import rich_click as click
@@ -15,7 +16,7 @@ class BaseApplication(Generic[ApplicationType]):  # noqa: UP046
     Subclass lists `default_components`, commands then reach any controller through click's obj.
     """
 
-    default_components: ClassVar[tuple[type[BaseComponent], ...]] = ()
+    default_components: ClassVar[Sequence[type[BaseComponent]]] = ()
     _instance: ClassVar[BaseApplication | None] = None
 
     def __init__(self) -> None:
